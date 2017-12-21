@@ -11,6 +11,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <build>
+        <finalName>ssmdemo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
@@ -28,8 +29,16 @@
                     <contextPath>/</contextPath>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.5</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
         </plugins>
-        <finalName>ssmdemo</finalName>
         <resources>
             <resource>
                 <directory>src/main/java</directory>
@@ -67,6 +76,13 @@
             <artifactId>mybatis-spring</artifactId>
             <version>1.2.2</version>
         </dependency>
+        <!-- mybatis-generator包 -->
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.3.5</version>
+        </dependency>
+
         <!--spring单元测试依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>
